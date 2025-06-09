@@ -1,0 +1,54 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Pedro Machado\\source\\repos\\Vendas\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{B11DED81-FBBD-40EF-89ED-B21B585F8F1B}|Vendas\\Vendas.csproj|c:\\users\\pedro machado\\source\\repos\\vendas\\vendas\\controllers\\usuariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B11DED81-FBBD-40EF-89ED-B21B585F8F1B}|Vendas\\Vendas.csproj|solutionrelative:vendas\\controllers\\usuariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B11DED81-FBBD-40EF-89ED-B21B585F8F1B}|Vendas\\Vendas.csproj|c:\\users\\pedro machado\\source\\repos\\vendas\\vendas\\controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B11DED81-FBBD-40EF-89ED-B21B585F8F1B}|Vendas\\Vendas.csproj|solutionrelative:vendas\\controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "UsuarioController.cs",
+              "DocumentMoniker": "C:\\Users\\Pedro Machado\\source\\repos\\Vendas\\Vendas\\Controllers\\UsuarioController.cs",
+              "RelativeDocumentMoniker": "Vendas\\Controllers\\UsuarioController.cs",
+              "ToolTip": "C:\\Users\\Pedro Machado\\source\\repos\\Vendas\\Vendas\\Controllers\\UsuarioController.cs",
+              "RelativeToolTip": "Vendas\\Controllers\\UsuarioController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-09T18:42:11.313Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "LoginController.cs",
+              "DocumentMoniker": "C:\\Users\\Pedro Machado\\source\\repos\\Vendas\\Vendas\\Controllers\\LoginController.cs",
+              "RelativeDocumentMoniker": "Vendas\\Controllers\\LoginController.cs",
+              "ToolTip": "C:\\Users\\Pedro Machado\\source\\repos\\Vendas\\Vendas\\Controllers\\LoginController.cs",
+              "RelativeToolTip": "Vendas\\Controllers\\LoginController.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAACoAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-09T18:41:47.142Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -59,10 +59,14 @@ builder.Services.AddScoped<VendaService>();
 builder.Services.AddScoped<ReceitaRepository, ReceitaRepository>();
 builder.Services.AddScoped<ReceitaService>();
 
+builder.Services.AddScoped<MovimentacaoEstoqueRepository, MovimentacaoEstoqueRepository>();
+builder.Services.AddScoped<MovimentacaoEstoqueService>();
+
 builder.Services.AddAutoMapper(typeof(ClienteProfile).Assembly);
 builder.Services.AddAutoMapper(typeof(UsuarioProfile).Assembly);
 builder.Services.AddAutoMapper(typeof(VendaProfile).Assembly);
 builder.Services.AddAutoMapper(typeof(ReceitaProfile).Assembly);
+builder.Services.AddAutoMapper(typeof(MovimentacaoEstoqueProfile).Assembly);
 
 var app = builder.Build();
 

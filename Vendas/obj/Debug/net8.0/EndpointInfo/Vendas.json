@@ -143,6 +143,70 @@
         }
       }
     },
+    "/api/MovimentacaoEstoque": {
+      "get": {
+        "tags": [
+          "MovimentacaoEstoque"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "MovimentacaoEstoque"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MovimentacaoEstoqueDTO"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MovimentacaoEstoqueDTO"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/MovimentacaoEstoqueDTO"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/MovimentacaoEstoque/{id}": {
+      "get": {
+        "tags": [
+          "MovimentacaoEstoque"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/Produto": {
       "get": {
         "tags": [
@@ -356,6 +420,43 @@
           }
         },
         "additionalProperties": false
+      },
+      "MovimentacaoEstoqueDTO": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "data": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "tipo": {
+            "$ref": "#/components/schemas/MovimentacaoTipo"
+          },
+          "quantidade": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "observacao": {
+            "type": "string",
+            "nullable": true
+          },
+          "produtoId": {
+            "type": "integer",
+            "format": "int64"
+          }
+        },
+        "additionalProperties": false
+      },
+      "MovimentacaoTipo": {
+        "enum": [
+          0,
+          1
+        ],
+        "type": "integer",
+        "format": "int32"
       },
       "Produto": {
         "type": "object",

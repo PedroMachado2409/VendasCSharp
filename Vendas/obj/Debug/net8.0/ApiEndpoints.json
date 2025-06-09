@@ -84,6 +84,48 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "Vendas.Controllers.MovimentacaoEstoqueController",
+    "Method": "ObterTodasMovimentacoesEstoque",
+    "RelativePath": "api/MovimentacaoEstoque",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Vendas.Controllers.MovimentacaoEstoqueController",
+    "Method": "CadastrarMovimentacaoEstoque",
+    "RelativePath": "api/MovimentacaoEstoque",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "movimentacaoDto",
+        "Type": "Vendas.Application.Dto.MovimentacaoEstoqueDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Vendas.Controllers.MovimentacaoEstoqueController",
+    "Method": "ObterMovimentacaoEstoquePorId",
+    "RelativePath": "api/MovimentacaoEstoque/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "Vendas.Controllers.ProdutoController",
     "Method": "ListarProdutos",
     "RelativePath": "api/Produto",

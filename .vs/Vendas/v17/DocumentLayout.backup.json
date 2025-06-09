@@ -3,12 +3,32 @@
   "WorkspaceRootPath": "C:\\Users\\Pedro Machado\\source\\repos\\Vendas\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B11DED81-FBBD-40EF-89ED-B21B585F8F1B}|Vendas\\Vendas.csproj|c:\\users\\pedro machado\\source\\repos\\vendas\\vendas\\controllers\\usuariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B11DED81-FBBD-40EF-89ED-B21B585F8F1B}|Vendas\\Vendas.csproj|solutionrelative:vendas\\controllers\\usuariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B11DED81-FBBD-40EF-89ED-B21B585F8F1B}|Vendas\\Vendas.csproj|c:\\users\\pedro machado\\source\\repos\\vendas\\vendas\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{B11DED81-FBBD-40EF-89ED-B21B585F8F1B}|Vendas\\Vendas.csproj|solutionrelative:vendas\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B11DED81-FBBD-40EF-89ED-B21B585F8F1B}|Vendas\\Vendas.csproj|c:\\users\\pedro machado\\source\\repos\\vendas\\vendas\\controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B11DED81-FBBD-40EF-89ED-B21B585F8F1B}|Vendas\\Vendas.csproj|solutionrelative:vendas\\controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B11DED81-FBBD-40EF-89ED-B21B585F8F1B}|Vendas\\Vendas.csproj|c:\\users\\pedro machado\\source\\repos\\vendas\\vendas\\migrations\\20250609213051_movimentoestoque.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B11DED81-FBBD-40EF-89ED-B21B585F8F1B}|Vendas\\Vendas.csproj|solutionrelative:vendas\\migrations\\20250609213051_movimentoestoque.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B11DED81-FBBD-40EF-89ED-B21B585F8F1B}|Vendas\\Vendas.csproj|c:\\users\\pedro machado\\source\\repos\\vendas\\vendas\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B11DED81-FBBD-40EF-89ED-B21B585F8F1B}|Vendas\\Vendas.csproj|solutionrelative:vendas\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B11DED81-FBBD-40EF-89ED-B21B585F8F1B}|Vendas\\Vendas.csproj|c:\\users\\pedro machado\\source\\repos\\vendas\\vendas\\infrastructure\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B11DED81-FBBD-40EF-89ED-B21B585F8F1B}|Vendas\\Vendas.csproj|solutionrelative:vendas\\infrastructure\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B11DED81-FBBD-40EF-89ED-B21B585F8F1B}|Vendas\\Vendas.csproj|c:\\users\\pedro machado\\source\\repos\\vendas\\vendas\\domain\\entities\\movimentacaoestoque.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B11DED81-FBBD-40EF-89ED-B21B585F8F1B}|Vendas\\Vendas.csproj|solutionrelative:vendas\\domain\\entities\\movimentacaoestoque.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B11DED81-FBBD-40EF-89ED-B21B585F8F1B}|Vendas\\Vendas.csproj|c:\\users\\pedro machado\\source\\repos\\vendas\\vendas\\controllers\\movimentacaoestoquecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B11DED81-FBBD-40EF-89ED-B21B585F8F1B}|Vendas\\Vendas.csproj|solutionrelative:vendas\\controllers\\movimentacaoestoquecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B11DED81-FBBD-40EF-89ED-B21B585F8F1B}|Vendas\\Vendas.csproj|c:\\users\\pedro machado\\source\\repos\\vendas\\vendas\\application\\services\\movimentacaoestoqueservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B11DED81-FBBD-40EF-89ED-B21B585F8F1B}|Vendas\\Vendas.csproj|solutionrelative:vendas\\application\\services\\movimentacaoestoqueservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -23,27 +43,92 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "UsuarioController.cs",
-              "DocumentMoniker": "C:\\Users\\Pedro Machado\\source\\repos\\Vendas\\Vendas\\Controllers\\UsuarioController.cs",
-              "RelativeDocumentMoniker": "Vendas\\Controllers\\UsuarioController.cs",
-              "ToolTip": "C:\\Users\\Pedro Machado\\source\\repos\\Vendas\\Vendas\\Controllers\\UsuarioController.cs",
-              "RelativeToolTip": "Vendas\\Controllers\\UsuarioController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-09T18:42:11.313Z",
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\Pedro Machado\\source\\repos\\Vendas\\Vendas\\appsettings.json",
+              "RelativeDocumentMoniker": "Vendas\\appsettings.json",
+              "ToolTip": "C:\\Users\\Pedro Machado\\source\\repos\\Vendas\\Vendas\\appsettings.json",
+              "RelativeToolTip": "Vendas\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-06-09T21:33:40.559Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "LoginController.cs",
-              "DocumentMoniker": "C:\\Users\\Pedro Machado\\source\\repos\\Vendas\\Vendas\\Controllers\\LoginController.cs",
-              "RelativeDocumentMoniker": "Vendas\\Controllers\\LoginController.cs",
-              "ToolTip": "C:\\Users\\Pedro Machado\\source\\repos\\Vendas\\Vendas\\Controllers\\LoginController.cs",
-              "RelativeToolTip": "Vendas\\Controllers\\LoginController.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAACoAAAAFAAAAAAAAAA==",
+              "Title": "20250609213051_MovimentoEstoque.cs",
+              "DocumentMoniker": "C:\\Users\\Pedro Machado\\source\\repos\\Vendas\\Vendas\\Migrations\\20250609213051_MovimentoEstoque.cs",
+              "RelativeDocumentMoniker": "Vendas\\Migrations\\20250609213051_MovimentoEstoque.cs",
+              "ToolTip": "C:\\Users\\Pedro Machado\\source\\repos\\Vendas\\Vendas\\Migrations\\20250609213051_MovimentoEstoque.cs",
+              "RelativeToolTip": "Vendas\\Migrations\\20250609213051_MovimentoEstoque.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-09T18:41:47.142Z",
+              "WhenOpened": "2025-06-09T21:32:11.573Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Pedro Machado\\source\\repos\\Vendas\\Vendas\\Program.cs",
+              "RelativeDocumentMoniker": "Vendas\\Program.cs",
+              "ToolTip": "C:\\Users\\Pedro Machado\\source\\repos\\Vendas\\Vendas\\Program.cs",
+              "RelativeToolTip": "Vendas\\Program.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAD4AAAA1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-09T21:29:48.247Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "MovimentacaoEstoque.cs",
+              "DocumentMoniker": "C:\\Users\\Pedro Machado\\source\\repos\\Vendas\\Vendas\\Domain\\Entities\\MovimentacaoEstoque.cs",
+              "RelativeDocumentMoniker": "Vendas\\Domain\\Entities\\MovimentacaoEstoque.cs",
+              "ToolTip": "C:\\Users\\Pedro Machado\\source\\repos\\Vendas\\Vendas\\Domain\\Entities\\MovimentacaoEstoque.cs",
+              "RelativeToolTip": "Vendas\\Domain\\Entities\\MovimentacaoEstoque.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-09T21:27:08.236Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "MovimentacaoEstoqueController.cs",
+              "DocumentMoniker": "C:\\Users\\Pedro Machado\\source\\repos\\Vendas\\Vendas\\Controllers\\MovimentacaoEstoqueController.cs",
+              "RelativeDocumentMoniker": "Vendas\\Controllers\\MovimentacaoEstoqueController.cs",
+              "ToolTip": "C:\\Users\\Pedro Machado\\source\\repos\\Vendas\\Vendas\\Controllers\\MovimentacaoEstoqueController.cs",
+              "RelativeToolTip": "Vendas\\Controllers\\MovimentacaoEstoqueController.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABUAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-09T21:22:43.289Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "MovimentacaoEstoqueService.cs",
+              "DocumentMoniker": "C:\\Users\\Pedro Machado\\source\\repos\\Vendas\\Vendas\\Application\\Services\\MovimentacaoEstoqueService.cs",
+              "RelativeDocumentMoniker": "Vendas\\Application\\Services\\MovimentacaoEstoqueService.cs",
+              "ToolTip": "C:\\Users\\Pedro Machado\\source\\repos\\Vendas\\Vendas\\Application\\Services\\MovimentacaoEstoqueService.cs",
+              "RelativeToolTip": "Vendas\\Application\\Services\\MovimentacaoEstoqueService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-09T21:19:58.05Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AppDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\Pedro Machado\\source\\repos\\Vendas\\Vendas\\Infrastructure\\Data\\AppDbContext.cs",
+              "RelativeDocumentMoniker": "Vendas\\Infrastructure\\Data\\AppDbContext.cs",
+              "ToolTip": "C:\\Users\\Pedro Machado\\source\\repos\\Vendas\\Vendas\\Infrastructure\\Data\\AppDbContext.cs",
+              "RelativeToolTip": "Vendas\\Infrastructure\\Data\\AppDbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-09T21:17:25.75Z",
               "EditorCaption": ""
             }
           ]

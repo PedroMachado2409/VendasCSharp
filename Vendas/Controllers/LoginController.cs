@@ -40,6 +40,26 @@ namespace Vendas.Controllers
             
         }
 
-     
+        [HttpGet("Eu")]
+        [Authorize]
+        public async Task<ActionResult<UsuarioDTO>> ObterUsuarioAutenticado()
+        {
+            try
+            {
+                var usuario = await _service.ObterUsuarioAutenticadoAsync();
+                return Ok(usuario);
+            }
+            catch (UnauthorizedAccessException ex)
+            {
+                // Se o usuário não estiver autenticado (mesmo com [Authorize], pode ser um token inválido)
+                return Unauthorized(new { message = ex.Message });
+            }
+            catch (Exception ex)
+            {
+                // Para outros erros internos
+                return StatusCode(500, new { message = ex.Message });
+            }
+        }
+
     }
 }

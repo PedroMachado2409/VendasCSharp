@@ -25,6 +25,11 @@ namespace Vendas.Infrastructure.Repositories
                 
         }
 
+        public async Task<Usuario?> ObterUsuarioPorId(int id)
+        {
+            return await _context.Usuarios.FindAsync(id);
+        }
+
         public async Task<Usuario> CadastrarUsuario(Usuario novoUsuario)
         {
             await _context.Usuarios.AddAsync(novoUsuario);

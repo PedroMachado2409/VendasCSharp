@@ -12,20 +12,35 @@ namespace Vendas.Application.Services
         private readonly ClienteRepository _clienteRepository;
         private readonly ProdutoRepository _produtoRepository;
         private readonly VendaRepository _vendaRepository;
+        private readonly ReceitaRepository _receitaRepository;
+        private readonly AuthService _authService;
         private readonly IMapper _mapper;
 
-        public VendaService(AppDbContext context, IMapper mapper, ClienteRepository clienteRepository, ProdutoRepository produtoRepository, VendaRepository vendaRepository)
+        public VendaService(AppDbContext context, IMapper mapper, ClienteRepository clienteRepository, ProdutoRepository produtoRepository,
+            VendaRepository vendaRepository, ReceitaRepository receitaRepository, AuthService service)
         {
             _context = context;
             _mapper = mapper;
             _clienteRepository = clienteRepository;
             _produtoRepository = produtoRepository;
             _vendaRepository = vendaRepository;
+            _receitaRepository = receitaRepository;
+            _authService = service;
+
         }
+
+        public async Task<List<VendaResponseDTO>> ObterVendasAsync()
+        {
+            var vendas = await _vendaRepository.ObterVendas()
+            ?? throw new Exception("Nenhuma venda encontrada.");
+            return _mapper.Map<List<VendaResponseDTO>>(vendas);
+        }
+
+   
 
         public async Task<Venda> CriarVendaAsync(VendaRequestDTO dto)
         {
-          
+
             var cliente = await _clienteRepository.ObterClientePorId(dto.ClienteId)
             ?? throw new Exception("Cliente não encontrado.");
 
@@ -46,14 +61,7 @@ namespace Vendas.Application.Services
 
         }
 
-        public async Task<List<VendaResponseDTO>> ObterVendasAsync()
-        {
-            var vendas = await _vendaRepository.ObterVendas()
-            ?? throw new Exception("Nenhuma venda encontrada.");
-
-          
-            return _mapper.Map<List<VendaResponseDTO>>(vendas);
-        }
+    
 
 
         //----------------------------------------------- METODOS PRIVADOS -----------------------------------------------
@@ -68,11 +76,16 @@ namespace Vendas.Application.Services
                     throw new Exception($"Produto com ID {itemDto.ProdutoId} não encontrado.");
                 }
 
+                if(itemDto.PrecoUnitario == 0)
+                {
+                    itemDto.PrecoUnitario = produto.Preco;
+                }
+
                 venda.Itens.Add(new VendaItem
                 {
                     ProdutoId = itemDto.ProdutoId,
                     Quantidade = itemDto.Quantidade,
-                    PrecoUnitario = itemDto.PrecoUnitario
+                    PrecoUnitario = itemDto.PrecoUnitario,
                 });
             }
 
@@ -81,17 +94,40 @@ namespace Vendas.Application.Services
 
         private async Task GerarReceita(Venda venda)
         {
-           Receita receita = new Receita
+            var usuario = await _authService.ObterUsuarioAutenticadoAsync();
+            Receita receita = new Receita
             {
-                Cliente = venda.Cliente,
+                ClienteId = venda.Cliente.Id,
                 DtCadastro = DateTime.UtcNow,
                 ValorTotal = venda.ValorTotal,
                 CodigoOrigem = venda.CodigoVenda,
                 Descricao = $"Venda realizada em {venda.DataVenda:dd/MM/yyyy} - Código: {venda.id}",
-           };
+                UsuarioId = usuario.Id,
+                
+            };
             await _context.Receitas.AddAsync(receita);
             await _context.SaveChangesAsync();
         }
 
+        private async Task<Receita> ObterReceitaPorCodigo(Guid codigo)
+        {
+            var receita = await _receitaRepository.ObterReceitaPorCodigo(codigo);
+            if (receita == null)
+            {
+                throw new Exception("Receita não encontrada.");
+            }
+            return receita;
+        }
+
+        private async Task ObterUsuarioAutenticado()
+        {
+            
+         
+        }
     }
 }
+
+
+
+
+

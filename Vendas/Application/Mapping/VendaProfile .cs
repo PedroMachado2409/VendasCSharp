@@ -10,6 +10,7 @@ namespace Vendas.Application.Mapping
         {
             CreateMap<Venda, VendaResponseDTO>()
                 .ForMember(dest => dest.ClienteNome, opt => opt.MapFrom(src => src.Cliente.Nome));
+           
 
             CreateMap<VendaItem, VendaItemResponseDTO>()
                 .ForMember(dest => dest.ProdutoNome, opt => opt.MapFrom(src => src.Produto.Nome));

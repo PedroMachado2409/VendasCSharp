@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using Vendas.Infrastructure.Data;
@@ -11,9 +12,11 @@ using Vendas.Infrastructure.Data;
 namespace Vendas.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250610211255_ReceitaUsuario")]
+    partial class ReceitaUsuario
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -21,37 +24,6 @@ namespace Vendas.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 63);
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
-
-            modelBuilder.Entity("Vendas.Domain.Entities.Atendimento", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer");
-
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
-
-                    b.Property<int>("ClienteId")
-                        .HasColumnType("integer");
-
-                    b.Property<Guid>("Codigo")
-                        .HasColumnType("uuid");
-
-                    b.Property<DateTime>("DataHora")
-                        .HasColumnType("timestamp with time zone");
-
-                    b.Property<string>("Descricao")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<int>("Status")
-                        .HasColumnType("integer");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("ClienteId");
-
-                    b.ToTable("Atendimentos");
-                });
 
             modelBuilder.Entity("Vendas.Domain.Entities.Cliente", b =>
                 {
@@ -117,39 +89,6 @@ namespace Vendas.Migrations
                     b.HasIndex("ProdutoId");
 
                     b.ToTable("MovimentacoesEstoque");
-                });
-
-            modelBuilder.Entity("Vendas.Domain.Entities.Parecer", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer");
-
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
-
-                    b.Property<int>("AtendimentoId")
-                        .HasColumnType("integer");
-
-                    b.Property<Guid>("Codigo")
-                        .HasColumnType("uuid");
-
-                    b.Property<DateTime>("DataHora")
-                        .HasColumnType("timestamp with time zone");
-
-                    b.Property<string>("Descricao")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<int>("UsuarioId")
-                        .HasColumnType("integer");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("AtendimentoId");
-
-                    b.HasIndex("UsuarioId");
-
-                    b.ToTable("Pareceres");
                 });
 
             modelBuilder.Entity("Vendas.Domain.Entities.Produto", b =>
@@ -312,17 +251,6 @@ namespace Vendas.Migrations
                     b.ToTable("VendaItems");
                 });
 
-            modelBuilder.Entity("Vendas.Domain.Entities.Atendimento", b =>
-                {
-                    b.HasOne("Vendas.Domain.Entities.Cliente", "Cliente")
-                        .WithMany()
-                        .HasForeignKey("ClienteId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Cliente");
-                });
-
             modelBuilder.Entity("Vendas.Domain.Entities.MovimentacaoEstoque", b =>
                 {
                     b.HasOne("Vendas.Domain.Entities.Produto", "Produto")
@@ -332,25 +260,6 @@ namespace Vendas.Migrations
                         .IsRequired();
 
                     b.Navigation("Produto");
-                });
-
-            modelBuilder.Entity("Vendas.Domain.Entities.Parecer", b =>
-                {
-                    b.HasOne("Vendas.Domain.Entities.Atendimento", "Atendimento")
-                        .WithMany("Pareceres")
-                        .HasForeignKey("AtendimentoId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("Vendas.Domain.Entities.Usuario", "Usuario")
-                        .WithMany()
-                        .HasForeignKey("UsuarioId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Atendimento");
-
-                    b.Navigation("Usuario");
                 });
 
             modelBuilder.Entity("Vendas.Domain.Entities.Receita", b =>
@@ -400,11 +309,6 @@ namespace Vendas.Migrations
                     b.Navigation("Produto");
 
                     b.Navigation("Venda");
-                });
-
-            modelBuilder.Entity("Vendas.Domain.Entities.Atendimento", b =>
-                {
-                    b.Navigation("Pareceres");
                 });
 
             modelBuilder.Entity("Vendas.Domain.Entities.Venda", b =>

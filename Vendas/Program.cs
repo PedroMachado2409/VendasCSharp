@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
+using System.Text.Json.Serialization;
 using Vendas.Application.Mapping;
 using Vendas.Application.Services;
 using Vendas.Infrastructure.Data;
@@ -36,6 +37,13 @@ builder.Services.AddAuthentication(options =>
     };
 });
 
+builder.Services
+    .AddControllers()
+    .AddJsonOptions(options =>
+    {
+        options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter());
+    });
+
 
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
@@ -62,11 +70,19 @@ builder.Services.AddScoped<ReceitaService>();
 builder.Services.AddScoped<MovimentacaoEstoqueRepository, MovimentacaoEstoqueRepository>();
 builder.Services.AddScoped<MovimentacaoEstoqueService>();
 
+builder.Services.AddScoped<AtendimentoRepository, AtendimentoRepository>();
+builder.Services.AddScoped<AtendimentoService>();
+
 builder.Services.AddAutoMapper(typeof(ClienteProfile).Assembly);
 builder.Services.AddAutoMapper(typeof(UsuarioProfile).Assembly);
 builder.Services.AddAutoMapper(typeof(VendaProfile).Assembly);
 builder.Services.AddAutoMapper(typeof(ReceitaProfile).Assembly);
 builder.Services.AddAutoMapper(typeof(MovimentacaoEstoqueProfile).Assembly);
+builder.Services.AddAutoMapper(typeof(SaldoProfile).Assembly);
+builder.Services.AddAutoMapper(typeof(AtendimentoProfile).Assembly);
+
+builder.Services.AddHttpContextAccessor();
+
 
 var app = builder.Build();
 

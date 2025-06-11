@@ -39,5 +39,16 @@ namespace Vendas.Controllers
             var movimentacao = await _service.CadastrarMovimentacaoEstoque(movimentacaoDto);
             return CreatedAtAction(nameof(ObterMovimentacaoEstoquePorId), new { id = movimentacao.Id }, movimentacao);
         }
+
+        [HttpGet("Saldo/{produtoId}")]
+        public async Task<IActionResult> ObterSaldoEstoquePorProdutoId(long produtoId)
+        {
+            var saldo = await _service.ObterSaldoEstoquePorProdutoId(produtoId);
+            if (saldo == null)
+            {
+                return NotFound("Produto não encontrado ou sem movimentações.");
+            }
+            return Ok(saldo);
+        }
     }
 }

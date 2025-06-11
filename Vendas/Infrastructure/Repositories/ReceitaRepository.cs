@@ -17,9 +17,12 @@ namespace Vendas.Infrastructure.Repositories
         {
             return await _context.Receitas
                 .Include(r => r.Cliente)
+                .Include(r => r.Usuario)
                 .OrderBy(r => r.Id)
                 .ToListAsync();
         }
+
+
 
         public async Task<Receita?> ObterReceitaPorId(int id)
         {
@@ -40,6 +43,13 @@ namespace Vendas.Infrastructure.Repositories
             _context.Receitas.Update(receita);
             await _context.SaveChangesAsync();
             return receita;
+        }
+
+        public async Task<Receita?> ObterReceitaPorCodigo(Guid codigo)
+        {
+                   return await _context.Receitas
+                .Include(r => r.Cliente)
+                .FirstOrDefaultAsync(r => r.CodigoOrigem == codigo);
         }
     }
 }

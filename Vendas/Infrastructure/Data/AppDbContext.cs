@@ -13,6 +13,8 @@ namespace Vendas.Infrastructure.Data
         public DbSet<Venda> Vendas { get; set; }
         public DbSet<Receita> Receitas { get; set; }
         public DbSet<MovimentacaoEstoque> MovimentacoesEstoque { get; set; }
+        public DbSet<Atendimento> Atendimentos { get; set; }
+        public DbSet<Parecer> Pareceres { get; set; }
 
         public AppDbContext(DbContextOptions<AppDbContext> options)
             : base(options) { }

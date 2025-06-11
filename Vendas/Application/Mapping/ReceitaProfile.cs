@@ -8,8 +8,9 @@ namespace Vendas.Application.Mapping
     {
         public ReceitaProfile()
         {
-            CreateMap<ReceitaDTO, Receita>()
+            CreateMap<Receita, ReceitaDTO>()
                 .ReverseMap();
+
         }
     }
     

@@ -1,5 +1,52 @@
 [
   {
+    "ContainingType": "Vendas.Controllers.AtendimentoController",
+    "Method": "ObterAtendimentos",
+    "RelativePath": "api/Atendimento",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Vendas.Controllers.AtendimentoController",
+    "Method": "CriarAtendimento",
+    "RelativePath": "api/Atendimento",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "Vendas.Application.Dto.AtendimentoDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Vendas.Controllers.AtendimentoController",
+    "Method": "AdicionarParecer",
+    "RelativePath": "api/Atendimento/parecer/{id}",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "parecerDto",
+        "Type": "Vendas.Application.Dto.ParecerDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "Vendas.Controllers.ClienteController",
     "Method": "ObterTodosClientes",
     "RelativePath": "api/Cliente",
@@ -69,6 +116,26 @@
   },
   {
     "ContainingType": "Vendas.Controllers.LoginController",
+    "Method": "ObterUsuarioAutenticado",
+    "RelativePath": "api/Login/Eu",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "Vendas.Application.Dto.UsuarioDTO",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Vendas.Controllers.LoginController",
     "Method": "Registrar",
     "RelativePath": "api/Login/Registrar",
     "HttpMethod": "POST",
@@ -120,6 +187,22 @@
       {
         "Name": "id",
         "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Vendas.Controllers.MovimentacaoEstoqueController",
+    "Method": "ObterSaldoEstoquePorProdutoId",
+    "RelativePath": "api/MovimentacaoEstoque/Saldo/{produtoId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "produtoId",
+        "Type": "System.Int64",
         "IsRequired": true
       }
     ],

@@ -38,8 +38,5 @@ namespace Vendas.Controllers
             return Ok (produtoDto);
         }
 
-
-
-
     }
 }

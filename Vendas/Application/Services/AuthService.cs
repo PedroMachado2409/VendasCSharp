@@ -16,13 +16,15 @@ namespace Vendas.Application.Services
         private readonly IConfiguration _configuration;
         private readonly UsuarioRepository _repository;
         private readonly IMapper _mapper;
+        private readonly IHttpContextAccessor _httpContextAccessor;
 
-        public AuthService(IConfiguration configuration, UsuarioRepository repository, IMapper mapper)
+
+        public AuthService(IConfiguration configuration, UsuarioRepository repository, IMapper mapper, IHttpContextAccessor httpContextAccessor )
         {
             _configuration = configuration;
             _repository = repository;
             _mapper = mapper;
-
+            _httpContextAccessor = httpContextAccessor;
         }
 
         public async Task<LoginResponseDTO> Autenticar(LoginDTO dto)
@@ -60,12 +62,20 @@ namespace Vendas.Application.Services
             return _mapper.Map<List<UsuarioDTO>>(usuarios);
         }
 
-        
+        public async Task<UsuarioDTO?> ObterUsuarioAutenticadoAsync()
+        {
+            var httpContext = _httpContextAccessor.HttpContext;
+            var email = httpContext.User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier)?.Value;
+            var idClaim = httpContext.User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier)?.Value;
+            var usuario = await _repository.ObterUsuarioPorEmail(email);
+
+            return _mapper.Map<UsuarioDTO>(usuario);
+        }
+
 
         private string GerarToken(Usuario usuario)
         {
             var chaveSecreta = _configuration["Jwt:Key"];
-
             var chaveSimetricar = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(chaveSecreta));
             var credenciais = new SigningCredentials(chaveSimetricar, SecurityAlgorithms.HmacSha256);
 

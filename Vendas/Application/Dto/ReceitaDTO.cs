@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.Text.Json.Serialization;
 using Vendas.Domain.Entities;
 
 namespace Vendas.Application.Dto
@@ -9,9 +10,12 @@ namespace Vendas.Application.Dto
         public string Descricao { get; set; } = string.Empty;
         public int ClienteId { get; set; }
         public string ClienteNome { get; set; } = string.Empty;
+        public int UsuarioId { get; set; }
+        public string UsuarioNome { get; set; } = string.Empty;
         public DateTime DtCadastro { get; set; } = DateTime.UtcNow;
-        public Guid CodigoOrigem { get; set; } = Guid.NewGuid();
         public bool StBaixado { get; set; } = false;
         public double ValorTotal { get; set; } = 0.0;
+        [JsonIgnore]
+        public Guid CodigoOrigem { get; set; } = new Guid();
     }
 }

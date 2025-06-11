@@ -113,3 +113,4 @@ C:\Users\Pedro Machado\source\repos\Vendas\Vendas\bin\Debug\net8.0\Microsoft.Ide
 C:\Users\Pedro Machado\source\repos\Vendas\Vendas\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll
 C:\Users\Pedro Machado\source\repos\Vendas\Vendas\bin\Debug\net8.0\BCrypt.Net-Next.dll
 C:\Users\Pedro Machado\source\repos\Vendas\vendas\obj\Debug\net8.0\Vendas.sourcelink.json
+C:\Users\Pedro Machado\source\repos\Vendas\Vendas\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt

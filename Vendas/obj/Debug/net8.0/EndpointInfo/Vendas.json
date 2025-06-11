@@ -5,6 +5,89 @@
     "version": "1.0"
   },
   "paths": {
+    "/api/Atendimento": {
+      "get": {
+        "tags": [
+          "Atendimento"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Atendimento"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AtendimentoDTO"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AtendimentoDTO"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/AtendimentoDTO"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Atendimento/parecer/{id}": {
+      "post": {
+        "tags": [
+          "Atendimento"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ParecerDTO"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ParecerDTO"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ParecerDTO"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/Cliente": {
       "get": {
         "tags": [
@@ -143,6 +226,35 @@
         }
       }
     },
+    "/api/Login/Eu": {
+      "get": {
+        "tags": [
+          "Login"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/UsuarioDTO"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UsuarioDTO"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UsuarioDTO"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/MovimentacaoEstoque": {
       "get": {
         "tags": [
@@ -197,6 +309,29 @@
             "schema": {
               "type": "integer",
               "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/MovimentacaoEstoque/Saldo/{produtoId}": {
+      "get": {
+        "tags": [
+          "MovimentacaoEstoque"
+        ],
+        "parameters": [
+          {
+            "name": "produtoId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
             }
           }
         ],
@@ -368,6 +503,42 @@
   },
   "components": {
     "schemas": {
+      "AtendimentoDTO": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "descricao": {
+            "type": "string",
+            "nullable": true
+          },
+          "dataHora": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "clienteId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "clienteNome": {
+            "type": "string",
+            "nullable": true
+          },
+          "status": {
+            "$ref": "#/components/schemas/StAtendimento"
+          },
+          "pareceres": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ParecerDTO"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
       "ClienteDTO": {
         "required": [
           "email",
@@ -452,11 +623,40 @@
       },
       "MovimentacaoTipo": {
         "enum": [
-          0,
-          1
+          "Entrada",
+          "Saida"
         ],
-        "type": "integer",
-        "format": "int32"
+        "type": "string"
+      },
+      "ParecerDTO": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "descricao": {
+            "type": "string",
+            "nullable": true
+          },
+          "dataHora": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "atendimentoId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "usuarioId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "usuarioNome": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
       },
       "Produto": {
         "type": "object",
@@ -511,13 +711,17 @@
             "type": "string",
             "nullable": true
           },
+          "usuarioId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "usuarioNome": {
+            "type": "string",
+            "nullable": true
+          },
           "dtCadastro": {
             "type": "string",
             "format": "date-time"
-          },
-          "codigoOrigem": {
-            "type": "string",
-            "format": "uuid"
           },
           "stBaixado": {
             "type": "boolean"
@@ -528,6 +732,16 @@
           }
         },
         "additionalProperties": false
+      },
+      "StAtendimento": {
+        "enum": [
+          "Aberto",
+          "Encerrado",
+          "AguardandoPagamento",
+          "Cancelado",
+          "AguardandoCliente"
+        ],
+        "type": "string"
       },
       "Usuario": {
         "type": "object",
@@ -545,6 +759,31 @@
             "nullable": true
           },
           "senha": {
+            "type": "string",
+            "nullable": true
+          },
+          "dataCadastro": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "ativo": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
+      "UsuarioDTO": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "nome": {
+            "type": "string",
+            "nullable": true
+          },
+          "email": {
             "type": "string",
             "nullable": true
           },
